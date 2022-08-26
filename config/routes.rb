@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root "statics#welcome"
+  get 'sample', to: 'statics#sample_css'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
