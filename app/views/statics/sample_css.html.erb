@@ -1,0 +1,142 @@
+
+<h1 class="text-4xl"> daisy uiのサンプルをいくつか置いておきます</h1>
+
+<div id = "navigation" class= "p-4">
+  <h2>ヘッダー<h2>
+  <div class="navbar bg-base-100 bordered bg-blue-200" >
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal p-0">
+        <li><a>Item 1</a></li>
+        <li tabindex="0">
+          <a>
+            Parent
+            <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+          </a>
+          <ul class="p-2 bg-base-100">
+            <li><a>Submenu 1</a></li>
+            <li><a>Submenu 2</a></li>
+          </ul>
+        </li>
+        <li><a>Item 3</a></li>
+      </ul>
+    </div>
+  </div>
+  <h2>フッター<h2>
+  <footer class="footer p-10 bg-neutral text-neutral-content">
+    <div>
+      <span class="footer-title">Services</span> 
+      <a class="link link-hover">Branding</a>
+      <a class="link link-hover">Design</a>
+      <a class="link link-hover">Marketing</a>
+      <a class="link link-hover">Advertisement</a>
+    </div> 
+    <div>
+      <span class="footer-title">Company</span> 
+      <a class="link link-hover">About us</a>
+      <a class="link link-hover">Contact</a>
+      <a class="link link-hover">Jobs</a>
+      <a class="link link-hover">Press kit</a>
+    </div> 
+    <div>
+      <span class="footer-title">Legal</span> 
+      <a class="link link-hover">Terms of use</a>
+      <a class="link link-hover">Privacy policy</a>
+      <a class="link link-hover">Cookie policy</a>
+    </div>
+  </footer>
+</div>
+<div class= "container mx-auto">
+  <h2 class="text-1xl">アラートの際に使ってください<h2>
+  <div class="alert alert-info shadow-lg">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current flex-shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span>New software update available.</span>
+    </div>
+  </div>
+
+  <h2>アバター<h2>
+  <div class="avatar">
+    <div class="w-24 rounded-xl">
+      <img src="https://placeimg.com/192/192/people" />
+    </div>
+  </div>
+  <div class="avatar">
+    <div class="w-24 rounded-full">
+      <img src="https://placeimg.com/192/192/people" />
+    </div>
+  </div>
+
+  <h2>バッジ</h2>
+  <div class="badge">neutral</div>
+  <div class="badge badge-primary">primary</div>
+  <div class="badge badge-secondary">secondary</div>
+  <div class="badge badge-accent">accent</div>
+  <div class="badge badge-ghost">ghost</div>
+
+  <div class="badge badge-info gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    info
+  </div>
+  <div class="badge badge-success gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    success
+  </div>
+  <div class="badge badge-warning gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    warning
+  </div>
+  <div class="badge badge-error gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-4 h-4 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    error
+  </div>
+
+  <h1>カード</h1>
+  <div class="card w-96 bg-base-100 shadow-xl">
+    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions justify-end">
+        <button class="btn btn-primary">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="border-2 rounded-lg p-5 m-5">
+    <h1>データの入力</h1>
+
+    <h2>チェックボックス</h2>
+    <div class="form-control">
+      <label class="label cursor-pointer w-1/5">
+        <span class="label-text">Remember me</span> 
+        <input type="checkbox" checked="checked" class="checkbox" />
+      </label>
+    </div>
+    <h2>テキスト入力</h2>
+    <input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+    <h2>テキストエリア<h2>
+    <textarea class="textarea" placeholder="Bio"></textarea>
+    <h2>ラジオボタン</h2>
+    <input type="radio" name="radio-1" class="radio" checked />
+    <input type="radio" name="radio-1" class="radio" />
+    <h2>選択画面</h2>
+    <select class="select w-full max-w-xs">
+      <option disabled selected>Pick your favorite Simpson</option>
+      <option>Homer</option>
+      <option>Marge</option>
+      <option>Bart</option>
+      <option>Lisa</option>
+      <option>Maggie</option>
+    </select>
+  </div>
+  <div class="border-2 rounded-lg p-5 m-5">
+    <h1>ナビゲーション</h1>
+    <ul class="menu bg-base-100 w-56">
+      <li><a>Item 1</a></li>
+      <li><a>Item 2</a></li>
+      <li><a>Item 3</a></li>
+    </ul>
+  </div>
+</div>
