@@ -1,0 +1,81 @@
+ja:
+  defaults:
+    user:
+      guest: 'ゲスト'
+      project: 'あなたのプロジェクト'
+      page: 'あなたのページ'
+      new_user: '新着ユーザー'
+      no_name: '名無しさん'
+      workspace: 'Your workspace'
+      profile: 'Your profile'
+    signin: 'ログイン画面'
+    signup: '新規登録'
+    login: 'ログイン'
+    logout: 'ログアウト'
+    follow: 'フォローする'
+    unfollow: 'フォロー解除'
+    home: 'ホーム'
+    list: '一覧'
+    edit: '編集'
+    state_change: '進捗状況の変更'
+    destroy: '削除'
+    close: '閉じる'
+    back: '戻る'
+    revert: '元に戻す'
+    read_more: 'もっと見る'
+    share: 'シェアする'
+    search: '検索'
+    search_word: '検索ワード'
+    password_reset: 'パスワードリセット'
+    danger: '取扱注意'
+    customer_support: 'カスタマーサポート'
+    question_box: '質問箱'
+    message:
+      not_index: 'プロジェクトがありません'
+      not_authenticated: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}を作成できませんでした'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
+      deleted: '%{item}を削除しました'
+      duplicated: '%{item}を複製しました'
+      duplicate_confirm: '%{item}を複製してもよろしいですか？'
+      delete_confirm: '%{item}を削除してもよろしいですか？'
+      require_login: 'ログインをしてください'
+      errors_detected: '件のエラーが検出されました'
+      not_supported: 'はサポートされていないフォーマットです'
+      keep_under: 'は%{item}以下の画像にしてください'
+      change_status_from_done: '%{item}を未完了状態に戻します'
+      change_status_from_in_progress: '%{item}を完了状態にします'
+      done_confirm: '%{item}を完成状態にさせてもよろしいですか？'
+      in_progress_confirm: '%{item}を未完成状態に戻してもよろしいですか？'
+  helper:
+  admin:
+  banken:
+    default: 'それを行う権限がありません'
+  statics:
+    welcome:
+      title: 'ようこそ！！'
+  user_sessions:
+    form:
+      title: 'ログインページ'
+      Forgot password?: 'パスワードをお忘れですか？'
+      New registration: '新規登録'
+    new:
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました！！'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました！！'
+  password_resets:
+    edit:
+      title: 'パスワードリセット画面'
+    create:
+      success: 'パスワード変更用のメールが送信されました'
+    update:
+      success: 'パスワードがアップデートされました'
+  user_mailer:
+    reset_password_email:
+      success: 'パスワードがリセットされました'
