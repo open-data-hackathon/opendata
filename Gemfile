@@ -35,6 +35,15 @@ gem "cssbundling-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
+gem 'tailwindcss-rails'
+gem 'sorcery'
+gem 'rails-i18n', '~> 7.0.0'
+gem 'draper'
+gem 'enum_help'
+gem 'banken'
+gem 'ransack'
+gem 'kaminari'
+gem 'meta-tags'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -48,7 +57,14 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
+
+# group :test do
+#   gem 'capybara'
+#   gem "webdrivers"
+# end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
@@ -59,5 +75,10 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
+  gem 'letter_opener_web'
 end
 

@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models: # (Model).model_name.human
+      user: 'ユーザー'
+      circle: 'サークル'
+      event: 'イベント'
+      tag: 'タグ'
+      place: '施設'
+      favorite: 'お気に入り'
+      notification: '通知'
+    attributes: # (Model).human_attribute_name(attribute)
+      user:
+      circle:
+      event:
+      tag:
+      place:
+      favorite:
+      notification:
