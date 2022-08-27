@@ -9,21 +9,9 @@ User.destroy_all
 Place.destroy_all
 Event.destroy_all
 
-User.create(
-  first_name: 'test',
-  last_name: 'user',
-  email: 'test@example.com',
-  password: 'password',
-  password_confirmation: 'password'
-)
-user = User.first
+user = FactoryBot.create(:user)
 
-place = Place.create(
-  place_name: '地域活動センター',
-  address: 'どこかの地域',
-  latitude: 123.456,
-  longitude: 123.456
-)
+place = FactoryBot.create(:place)
 
 user.events.create(
   title: "フットサル大会",
