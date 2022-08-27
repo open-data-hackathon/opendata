@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   root "statics#welcome"
   get 'sample', to: 'statics#sample_css'
   get 'login', to: 'user_sessions#new'
