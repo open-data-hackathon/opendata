@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
 
-  resources :users, except: :index
+  resources :users#, except: :index
 
   resources :events do
     resource :favorites, only: %i[create destroy]
