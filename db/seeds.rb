@@ -10,8 +10,11 @@ Place.destroy_all
 Event.destroy_all
 
 User.create(
-  name: 'test_user',
-  email: 'test@example.com'
+  first_name: 'test',
+  last_name: 'user',
+  email: 'test@example.com',
+  password: 'password',
+  password_confirmation: 'password'
 )
 user = User.first
 
