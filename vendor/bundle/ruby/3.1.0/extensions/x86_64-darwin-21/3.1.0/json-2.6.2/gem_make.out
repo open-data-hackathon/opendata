@@ -1,0 +1,13 @@
+current directory: /Users/taniguchimasahiro_1/open_date_hackathon_app/vendor/bundle/ruby/3.1.0/gems/json-2.6.2/ext/json
+/Users/taniguchimasahiro_1/.rbenv/versions/3.1.0/bin/ruby -I /Users/taniguchimasahiro_1/.rbenv/versions/3.1.0/lib/ruby/3.1.0 -r ./siteconf20220827-8054-ak3xiu.rb extconf.rb
+creating Makefile
+
+current directory: /Users/taniguchimasahiro_1/open_date_hackathon_app/vendor/bundle/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\= clean
+
+current directory: /Users/taniguchimasahiro_1/open_date_hackathon_app/vendor/bundle/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\=
+make: Nothing to be done for `all'.
+
+current directory: /Users/taniguchimasahiro_1/open_date_hackathon_app/vendor/bundle/ruby/3.1.0/gems/json-2.6.2/ext/json
+make DESTDIR\= install
