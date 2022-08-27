@@ -12,9 +12,6 @@ ja:
       user:
       circle:
       event:
-        id: 'ID'
-        title: 'イベント名'
-        body: 'イベント詳細'
       tag:
       place:
       favorite:
