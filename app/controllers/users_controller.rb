@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
-  # GET /users
-  def index
-    @users = User.all
-  end
+  skip_before_action :require_login, only: %i[new create]
 
   # GET /users/1
   def show
+    @join_events = current_user&.join_events
   end
 
   # GET /users/new
@@ -42,7 +39,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, notice: "User was successfully destroyed."
+    redirect_to root_path, notice: "User was successfully destroyed."
   end
 
   private
