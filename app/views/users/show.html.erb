@@ -13,9 +13,21 @@
     </div>
     <%= link_to 'Create Events', new_event_path, class: "ml-2 rounded-lg py-3 px-5 mb-8 bg-gray-100 inline-block font-medium" %>
   </div>
-  
+
   <div class="inline-block ml-2 mb-8">
     <p class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >参加予定のイベント<p>
+
+<%
+=begin
+%>
+  <% @join_events each do |event| %>
+    <%= event.title %>
+    <%= event.title %>
+  <% end %>
+<%
+=end
+%>
+
   </div>
   <div class="inline-block ml-2 mb-8">
     <p class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >自分が作成したイベント<p>
