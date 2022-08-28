@@ -1,12 +1,12 @@
 <header>
   <div class="navbar bg-base-100 bordered bg-blue-200" >
     <div class="flex-1">
-      <a class="btn btn-ghost normal-case text-xl">EventMatch</a>
+      <%= link_to "EventMatch", root_path, class: "btn btn-ghost normal-case text-xl" %>
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal p-0">
-        <li><a>ログイン</a></li>
-        <li><a>ユーザー登録</a></li>
+        <li><%= link_to "ログイン", login_path %></li>
+        <li><%= link_to "ユーザー登録", new_user_path %></li>
       </ul>
     </div>
   </div>

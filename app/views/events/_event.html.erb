@@ -1,42 +1,27 @@
-<div id="<%= dom_id event %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= event.title %>
-  </p>
+<div class="card card-compact w-96 bg-base-100 shadow-xl">
+  <div id="<%= dom_id event %>">
+    <figure><%= image_tag event.events_image.url %></figure>
+    <div class="card-body">
+      <h2 class="card-title"><%= link_to event.title, event_path(event) %></h2>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Body:</strong>
-    <%= event.body %>
-  </p>
+      <%# if current_user.own?(event) %>
+        <%#= render 'crud_menus', event: event %>
+      <%# else %>
+        <%#= render 'favorite', event: event %>
+      <%# end %>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Events image:</strong>
-    <%= event.events_image %>
-  </p>
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <%= icon 'far', 'user' %>
+          <%= event.user.name %>
+        </li>
+        <li class="list-inline-item">
+          <%= icon 'far', 'calendar' %>
+          <%= l event.created_at, format: :long %>
+        </li>
+      </ul>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Date:</strong>
-    <%= event.date %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Member:</strong>
-    <%= event.member %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">State:</strong>
-    <%= event.state %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= event.user_id %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this event", event, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this event', edit_event_path(event), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+      <p><%= event.body %></p>
+    </div>
+  </div>
 </div>
