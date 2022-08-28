@@ -10,9 +10,25 @@ ja:
       notification: '通知'
     attributes: # (Model).human_attribute_name(attribute)
       user:
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        last_name: '姓'
+        first_name: '名'
+        full_name: '氏名'
       circle:
       event:
+        title: 'タイトル'
+        body: '本文'
+        events_image: 'サムネイル'
+        date: '開催日時'
+        created_at: '作成日時'
+        updated_at: '更新日時'
+        place: '開催施設'
+        user: '作成者'
+        
       tag:
+
       place:
       favorite:
       notification:
