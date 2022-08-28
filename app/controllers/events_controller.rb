@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   def index
     @q = Event.ransack(params[:q])
-    @events = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+    @events = @q.result(distinct: true).includes(:user, :place).order(created_at: :desc).page(params[:page])
     #サークルが挟まればこうなるはず
     #@events = @q.result(distinct: true).includes(:cercle).order(created_at: :desc).page(params[:page])
   end
@@ -24,11 +24,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    #最初のユーザーをcurrent_userとしてイベントを作ります
-    current_user = User.first
     @event = current_user.events.new(event_params)
-    #場所情報を入れるところ
-    #@places = Place.new
     if @event.save
       redirect_to @event, notice: "Event was successfully created."
     else
@@ -59,7 +55,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :body, :events_image, :date, :member).merge(state: 'open',events_image: 'sample.jpeg')
-      #:place_idも入れること
+      params.require(:event).permit(:title, :body, :events_image, :date, :member, :place_id)
     end
 end

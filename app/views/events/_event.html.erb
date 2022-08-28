@@ -1,27 +1,30 @@
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
+<div class="card card-compact bg-base-100">
   <div id="<%= dom_id event %>">
-    <figure><%= image_tag event.events_image.url %></figure>
+    <% if event.events_image? %>
+      <figure><%= image_tag event.events_image.url %></figure>
+    <% end %>
     <div class="card-body">
-      <h2 class="card-title"><%= link_to event.title, event_path(event) %></h2>
-
-      <%# if current_user.own?(event) %>
-        <%#= render 'crud_menus', event: event %>
-      <%# else %>
-        <%#= render 'favorite', event: event %>
-      <%# end %>
-
+      <%= tag.h2 class: 'card-title' do %>
+        <%= link_to event.title, event_path(event) %>
+      <% end %>
       <ul class="list-inline">
         <li class="list-inline-item">
-          <%= icon 'far', 'user' %>
-          <%= event.user.name %>
+          <p class="font-mono">作成者</p>
+          <%= tag.p event.user.first_name %>
         </li>
         <li class="list-inline-item">
-          <%= icon 'far', 'calendar' %>
+          <p class="font-mono">イベント内容</p>
+          <%= tag.p event.body %>
+        </li>
+        <li class="list-inline-item">
+          <p class="font-mono">開催日時</p>
           <%= l event.created_at, format: :long %>
         </li>
+        <li class="list-inline-item">
+          <p class="font-mono">開催場所</p>
+          <%= tag.p event.place.place_name %>
+        </li>
       </ul>
-
-      <p><%= event.body %></p>
     </div>
   </div>
 </div>
