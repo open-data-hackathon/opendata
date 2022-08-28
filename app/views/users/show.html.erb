@@ -13,8 +13,14 @@
     <%= link_to 'Create Events', new_event_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
   </div>
   
-    <P>お気に入りのイベント</p>
+  <div>
     <p>参加予定のイベント</p>
-    <p>過去に参加したイベント</p>
+    <% @join_events each do |event| %>
+      <% event.title %>
+      <% event.body %>
+    <% end %>
     <p>自分が作成したイベント</p>
+    # <p>お気に入りのイベント</p>
+    # <p>過去に参加したイベント</p>
+  </div>
 </div>
