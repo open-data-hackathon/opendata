@@ -1,5 +1,5 @@
 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-  <div id="event-id-<%= event.id %>">
+  <div id="<%= dom_id event %>">
     <figure><%= image_tag event.events_image.url %></figure>
     <div class="card-body">
       <h2 class="card-title"><%= link_to event.title, event_path(event) %></h2>
