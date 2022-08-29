@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update destroy]
-
-  # GET /users
-  def index
-    @users = User.all
-  end
+  before_action :set_user, only: %i[ show edit update destroy ]
+  skip_before_action :require_login, only: %i[new create]
 
   # GET /users/1
-  def show; end
+  def show
+    @join_events = current_user&.join_events
+  end
 
   # GET /users/new
   def new
