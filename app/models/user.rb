@@ -11,4 +11,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
+  validates :nickname, length: { maximum: 255 }
+  validates :body, length: { maximum: 16_383 }
 end
