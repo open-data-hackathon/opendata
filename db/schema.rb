@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema[7.0].define(version: 2022_08_27_115949) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
+    t.string "title", limit: 255, null: false
+    t.string "body", limit: 16383, null: false
     t.string "events_image"
-    t.datetime "date"
+    t.datetime "date", null: false
     t.integer "member"
-    t.integer "state"
+    t.integer "state", default: 0, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -41,10 +40,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_115949) do
   end
 
   create_table "places", force: :cascade do |t|
-    t.string "place_name"
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
+    t.string "place_name", null: false
+    t.string "address", null: false
+    t.integer "city", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -53,8 +53,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_115949) do
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
-    t.string "first_name", null: false
-    t.string "last_name", null: false
+    t.string "first_name", limit: 255, null: false
+    t.string "last_name", limit: 255, null: false
+    t.string "nickname", limit: 255
+    t.text "body"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
