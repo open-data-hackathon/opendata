@@ -10,6 +10,7 @@ ja:
       user: 'ユーザー'
       circle: 'サークル'
       event: 'イベント'
+      join_event: 'イベント参加'
       tag: 'タグ'
       place: '施設'
       favorite: 'お気に入り'
