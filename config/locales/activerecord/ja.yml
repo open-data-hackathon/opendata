@@ -1,9 +1,16 @@
 ja:
   activerecord:
+    errors:
+      models:
+        event:
+          attributes:
+            member:
+              in: "は1~99人の間で選択してください"
     models: # (Model).model_name.human
       user: 'ユーザー'
       circle: 'サークル'
       event: 'イベント'
+      join_event: 'イベント参加'
       tag: 'タグ'
       place: '施設'
       favorite: 'お気に入り'
@@ -26,9 +33,8 @@ ja:
         updated_at: '更新日時'
         place: '開催施設'
         user: '作成者'
-        
+        member: '人数'
       tag:
-
       place:
       favorite:
       notification:
