@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to users_url, success: t('defaults.message.deleted', item: Event.model_name.human)
+    redirect_to users_url, success: t('defaults.message.deleted', item: User.model_name.human)
   end
 
   private
