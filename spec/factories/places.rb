@@ -4,5 +4,6 @@ FactoryBot.define do
     address { "MyString" }
     latitude { 1.5 }
     longitude { 1.5 }
+    city { "MyString" }
   end
 end
