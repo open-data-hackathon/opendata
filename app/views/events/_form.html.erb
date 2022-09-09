@@ -1,6 +1,5 @@
 <%= form_with(model: event, class: "contents") do |form| %>
   <%= render 'shared/error_messages', object: form.object %>
-
   <div class="my-5">
     <%= form.label :title %>
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
