@@ -31,7 +31,7 @@ ja:
         date: '開催日時'
         created_at: '作成日時'
         updated_at: '更新日時'
-        place: '開催施設'
+        place_id: '開催施設'
         user: '作成者'
         member: '人数'
       tag:
