@@ -1,14 +1,13 @@
 <div class="card card-compact bg-base-100">
   <div id="<%= dom_id event %>">
     <% if event.events_image? %>
-      <figure><%= image_tag event.events_image.url %></figure>
+      <!-- <figure><%# image_tag event.events_image.url %></figure> -->
+      <figure><%= image_tag '400x300.png'%></figure>
     <% end %>
     <div class="card-body">
       <%= tag.h2 class: 'card-title' do %>
-        <%= link_to event.title, event_path(event) %>
+        <%= link_to event.title, event_path(event), class:'link' %>
       <% end %>
-
-
       <ul class="list-inline">
         <li class="list-inline-item">
           <p class="font-mono">作成者</p>
