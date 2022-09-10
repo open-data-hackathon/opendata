@@ -1,8 +1,10 @@
 <% if object.errors.any? %>
-  <div class="alert alert-danger">
-    <ul class="mb-0">
-      <% object.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= object.errors.count %><%= t ('defaults.message.errors_detected')%>:</h2>
+
+    <ul>
+      <% object.errors.each do |error| %>
+        <li><%= error.full_message %></li>
       <% end %>
     </ul>
   </div>

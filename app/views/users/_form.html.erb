@@ -1,4 +1,5 @@
 <%= form_with(model: user, class: "contents") do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="my-5">
     <%= f.label :last_name %>
     <%= f.text_field :last_name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
