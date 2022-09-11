@@ -4,7 +4,6 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
-    @users = User.all
     @q = Event.ransack(params[:q])
     @events = @q.result(distinct: true).includes(:user, :place).order(created_at: :desc).page(params[:page])
     # サークルが挟まればこうなるはず
