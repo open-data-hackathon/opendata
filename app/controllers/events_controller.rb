@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy]
+  skip_before_action :require_login, only: %i[index]
 
   # GET /events
   def index
@@ -10,7 +11,10 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1
-  def show; end
+  def show
+    @join_event = JoinEvent.new
+    @joined_users = Event.find(@event.id).joined_users
+  end
 
   # GET /events/new
   def new
