@@ -1,14 +1,10 @@
 <div id="<%= dom_id user %>">
   <p class="my-5">
-  <strong class="block font-medium mb-1">last_name:</strong>
-  <%= user.last_name %>
+  <strong class="block font-medium mb-1"><%= User.human_attribute_name(:nickname) %></strong>
+  <%= user.nickname %>
   </p>
   <p class="my-5">
-  <strong class="block font-medium mb-1">first_name:</strong>
-  <%= user.first_name %>
-  </p>
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Email:</strong>
-    <%= user.email %>
+  <strong class="block font-medium mb-1"><%= User.human_attribute_name(:body) %></strong>
+  <%= user.body %>
   </p>
 </div>
