@@ -10,16 +10,21 @@
       <% end %>
       <ul class="list-inline">
         <li class="list-inline-item">
-          <p class="font-mono">作成者</p>
+          <p class="font-mono">開催日時</p>
+          <%= l event.date, format: :long %>
+        </li>
+        <li class="list-inline-item">
+          <p class="font-mono">開催場所</p>
+          <%= tag.p event.place.address %>
+        </li>
+         <li class="list-inline-item">
+          <p class="font-mono">主催者</p>
+           <%#= 本当は tag.p event.user.nickname %>
           <%= tag.p event.user.first_name %>
         </li>
-        <li class="list-inline-item">
-          <p class="font-mono">イベント内容</p>
+         <li class="list-inline-item">
+          <p class="font-mono">イベント詳細</p>
           <%= tag.p event.body %>
-        </li>
-        <li class="list-inline-item">
-          <p class="font-mono">開催日時</p>
-          <%= l event.created_at, format: :long %>
         </li>
       </ul>
     </div>
