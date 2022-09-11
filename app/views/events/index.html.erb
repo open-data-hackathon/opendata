@@ -5,10 +5,23 @@
     <% end %>
 
     <div class="flex justify-between items-center">
-      <h1 class="font-bold text-4xl">イベント作成</h1>
+      <h1 class="font-bold text-4xl">イベント一覧</h1>
       <%= link_to 'New event', new_event_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
     </div>
 
+    <%= search_form_for @q, url: events_path do |f| %>
+      <div class="row">
+        <div class="items-center">
+          <div class="col-auto pt-10">
+            <%= f.search_field :title_or_body_cont, class: 'input input-bordered w-full max-w-xs', placeholder: '検索ワード' %>
+          </div>
+          <div class="col-auto pt-2 pb-10">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
     <div id="events" class="min-w-full">
       <%= render @events %>
     </div>
