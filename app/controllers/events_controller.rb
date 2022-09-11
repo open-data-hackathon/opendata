@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   # GET /events
   def index
+    @users = User.all
     @q = Event.ransack(params[:q])
     @events = @q.result(distinct: true).includes(:user, :place).order(created_at: :desc).page(params[:page])
     # サークルが挟まればこうなるはず
@@ -11,7 +12,10 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1
-  def show; end
+  def show
+    @join_event = JoinEvent.new
+    @joined_users = Event.find(@event.id).joined_users
+  end
 
   # GET /events/new
   def new

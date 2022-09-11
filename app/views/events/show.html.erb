@@ -5,11 +5,24 @@
     <% end %>
 
     <%= render @event %>
-
-    <%= link_to 'Edit this event', edit_event_path(@event), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this event', event_path(@event), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div>
+      <p class="font-mono">参加するユーザー</p>
+      <% @joined_users.each do |join_user| %>
+        <%#本来はこっち= user.nickname %>
+        <%= join_user.first_name %>
+      <% end %>
     </div>
-    <%= link_to 'Back to events', events_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+  <div>
+    <% if @event.user_id == current_user.id %>
+      <%= link_to '編集', edit_event_path(@event), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= button_to '削除', event_path(@event), method: :delete, form: { data: { turbo_confirm: "削除しますか？" } }, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <% else %>
+      <% if current_user.joined?(@event) %>
+          <%= button_to "参加をキャンセルする", event_join_events_path(@event), method: :delete, form: { data: { turbo_confirm: "イベントの参加をキャンセルしますか？" } } %>
+      <% else %>
+          <%= button_to "参加を申し込む", event_join_events_path(@event), method: :post, form: { data: { turbo_confirm: "イベントに参加しますか？" } } %>
+      <% end %>
+    <% end %>
   </div>
 </div>

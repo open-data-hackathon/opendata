@@ -13,4 +13,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 255 }
   validates :nickname, length: { maximum: 255 }
   validates :body, length: { maximum: 16_383 }
+  
+  def joined?(event)
+    self.join_events.exists?(event_id: event.id)
+  end
 end
