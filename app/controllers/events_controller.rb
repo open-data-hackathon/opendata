@@ -10,7 +10,9 @@ class EventsController < ApplicationController
   end
 
   # GET /events/1
-  def show; end
+  def show
+    @joined_users = @event.joined_users
+  end
 
   # GET /events/new
   def new
@@ -54,6 +56,6 @@ class EventsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def event_params
-    params.require(:event).permit(:title, :body, :events_image, :date, :member, place_id: 1)
+    params.require(:event).permit(:title, :body, :events_image, :date, :member, :place_id)
   end
 end

@@ -1,6 +1,8 @@
 class EventDecorator < Draper::Decorator
   delegate_all
-
+  def full_address
+    "#{object.place.city} #{object.place.address}"
+  end
   # Define presentation-specific methods here. Helpers are accessed through
   # `helpers` (aka `h`). You can override attributes, for example:
   #
