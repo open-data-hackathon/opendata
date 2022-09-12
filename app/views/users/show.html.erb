@@ -7,16 +7,12 @@
 
     <%= render @user %>
 
-    <%= link_to 'Edit this user', edit_user_path(@user), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class= "inline-block ml-2">
-      <%= button_to 'Destroy this user', user_path(@user), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <%= link_to 'ユーザー情報編集', edit_user_path(@user), class: "btn btn-success" %>
+    <div class="inline-block ml-2">
+      <%= button_to 'ユーザー削除', user_path(@user), method: :delete, class: "btn btn-error" %>
     </div>
-    <%= link_to 'Create Events', new_event_path, class: "ml-2 rounded-lg py-3 px-5 mb-8 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'イベント作成', new_event_path, class: "btn btn-success" %>
   </div>
-
-  <div class= "inline-block ml-2 mb-8">
-    <p class= "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >参加予定のイベント<p>
-
 <%
 =begin
 %>
@@ -27,16 +23,4 @@
 <%
 =end
 %>
-
-  </div>
-  <div class="inline-block ml-2 mb-8">
-    <p class= "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >自分が作成したイベント<p>
-  </div>
-  <div class="inline-block ml-2 mb-8">
-    <p class= "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >お気に入りしたイベント<p>
-  </div>
-  <div class="inline-block ml-2 mb-8">
-    <p class= "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" >参加したイベント<p>
-  </div>
-  
 </div>

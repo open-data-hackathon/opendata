@@ -1,0 +1,22 @@
+<div id="<%= dom_id user %>">
+  <tr>
+    <th scope="row"></th>
+      <td>
+        <%#= image_tag current_user.avatar.url, class: 'rounded-circle mr15', size: '50x50' %>
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <div class="w-10 rounded-full">
+            <img src="https://placeimg.com/80/80/people" />
+          </div>
+        </label>
+      </td>
+    </tr>
+  <tr>
+  <p class="my-5">
+  <strong class="block font-medium mb-1"><%= User.human_attribute_name(:nickname) %></strong>
+  <%= user.nickname %>
+  </p>
+  <p class="my-5">
+  <strong class="block font-medium mb-1"><%= User.human_attribute_name(:body) %></strong>
+  <%= user.body %>
+  </p>
+</div>
