@@ -4,14 +4,7 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @event %>
-    <div>
-      <p class="font-mono">参加するユーザー</p>
-      <% @joined_users.each do |join_user| %>
-        <%#本来はこっち= user.nickname %>
-        <%= join_user.first_name %>
-      <% end %>
-    </div>
+    <%= render partial: 'event_detail', locals: { event: @event } %>
   </div>
   <div>
     <% if @event.user_id == current_user.id %>

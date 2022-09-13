@@ -12,8 +12,7 @@ class EventsController < ApplicationController
 
   # GET /events/1
   def show
-    @join_event = JoinEvent.new
-    @joined_users = Event.find(@event.id).joined_users
+    @joined_users = @event.joined_users
   end
 
   # GET /events/new
