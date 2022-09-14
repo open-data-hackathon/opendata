@@ -1,30 +1,38 @@
-<%= link_to event_path(event) do %>
-<div class="card w-96 bg-base-100 shadow-xl inline-block"><font></font>
-  <figure><img src="https://placeimg.com/400/225/arch" alt=<%= event.title %>/></figure><font></font>
-  <div class="card-body"><font></font>
-    <h2 class="card-title"><font><%= event.title %></font>
-      <div class="badge badge-secondary"><%= event.state %></div><font></font>
-      </h2>
-      <p><%= event.body %></p><font></font>
-    <div class="card-normal text-right">
-      <font>開催日時：<%= l event.date, format: :long %></font><br>
-      <font>場所：<%= event.place.place_name %></font>
-      <font>募集人数：<%= event.member %></font>
-    </div>
-    <div class="card-actions justify-end"><font></font>
-      <% if event.user == current_user %>
-        <%=link_to edit_event_path(event) do %>
-          <button class="btn btn-success">編集</button>
-        <% end %>
-        <%=link_to event_path(event), data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
-        <button class="btn btn-error">削除</button>
-        <% end %>
-      <% else %>
-        <button class="btn btn-ghost">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
-        </button>
+<div class="card w-96 bg-base-100 shadow-xl inline-block">
+  <figure>
+    <img src="https://placeimg.com/400/225/arch" alt=<%= event.title %>/>
+  </figure>
+    <div id= "event-body" class="card-body">
+      <%= link_to event_path(event) do %>
+        <div id= "event-header">
+          <div class="flex">
+            <h2 id= "event-title" class="card-title"><%= event.title %></h2>
+            <div id= "event-state" class="badge badge-secondary mt-1 ml-2"><%= event.state %></div>
+          </div>
+          <p id= "event-title"><%= event.body %></p>
+        </div>
+        <div id= "event-details" class="card-normal text-right">
+          開催日時：<%= l event.date, format: :long %><br>
+          場所：<%= event.place.place_name %>
+          募集人数：<%= event.member %>
+        </div>
       <% end %>
-    </div><font></font>
-  </div><font></font>
+      <div class="card-actions justify-end">
+        <% if event.user == current_user %>
+          <div class= 'flex'>
+            <%=link_to '編集', edit_event_path(event), class: "btn btn-success" %>
+            <%=link_to '削除', event_path(event),
+              data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' },
+              class: "btn btn-error"
+            %>
+          </div>
+        <% else %>
+          <div class= "link m-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+        <% end %>
+      </div>
+    </div>
 </div>
-<% end %>
