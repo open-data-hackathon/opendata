@@ -1,38 +1,52 @@
 <%= form_with(model: event, class: "contents") do |form| %>
   <%= render 'shared/error_messages', object: form.object %>
   <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :title, "タイトル(必須)", calss: "text-gray-800" %>
+    <%= form.text_field :title, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
   </div>
-
+    
   <div class="my-5">
-    <%= form.label :body %>
-    <%= form.text_area :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :date, "開催日時(必須)", calss: "text-gray-800" %>
+    <%= form.datetime_field :date, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
   </div>
-
+    
   <div class="my-5">
-    <%= form.label :events_image %>
-    <%= form.file_field :events_image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :date %>
-    <%= form.datetime_field :date, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :member %>
+    <%= form.label :member, "募集人数", calss: "text-gray-800" %>
     <%= form.number_field :member,
       in: 1..99,
-      class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+      class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
+  </div>
+
+  <div calss="text-gray-800">開催場所</div>
+
+  <div class="my-5 inline-block">
+    <%= form.label :district_id, "地区", calss: "text-gray-400 text-xs" %><br>
+    <%= form.collection_select :district_id, District.all, :id, :name, { include_blank: "地区を選んでください" }, { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" }  %>
+  </div>
+
+  <div class="my-5 inline-block ml-4">
+    <%= form.label :place_id, calss: "text-gray-400 text-xs" %><br>
+    <%= form.collection_select :place_id, Place.all, :id, :place_name, { include_blank: "開催場所を選択してください" } , { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" } %>
+  </div>
+
+  <div class="mb-5">
+    <%= form.label :address, "住所(東京都〇〇区以降)", calss: "text-gray-400 text-xs" %>
+    <%= form.text_field :address, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
+  </div>
+  
+  <div class="my-5">
+    <%= form.label :body, "本文(必須)", calss: "text-gray-800" %>
+    <%= form.text_area :body, class: "w-full h-64 bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :place_id %>
-    <%= form.select :place_id, Place.pluck(:place_name,:id) ,class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= form.label :events_image, calss: "text-gray-800" %>
+    <%= form.file_field :events_image, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2 mb-5" %>
   </div>
 
+
   <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+    <%= form.submit class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 cursor-pointer" %>
   </div>
+
 <% end %>

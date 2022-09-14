@@ -14,7 +14,7 @@
           <li><%= link_to "ホーム", root_path %></li>
           <li><%= link_to "イベント一覧", events_path %></li>
           <li><%= link_to "プロフィール", profile_path %></li>
-          <li><%= link_to "参加イベント一覧", events_path %></li>
+          <li><%= link_to "参加イベント一覧", user_joined_events_path(current_user) %></li>
           <li><%= button_to t('defaults.logout'), logout_path, method: :delete, data: { turbo: false } %><li>
         </ul>
       </div>
