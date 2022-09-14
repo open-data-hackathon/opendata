@@ -12,7 +12,7 @@
       </div>
     
     <div id="events" class="min-w-full">
-      <%= render partial: 'events/event', collection: @events %>
+      <%= render partial: 'events/event', collection: @joined_events, as: 'event' %>
     </div>
   </div>
 </div>
