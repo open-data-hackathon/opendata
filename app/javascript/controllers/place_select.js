@@ -9,7 +9,9 @@ $(function() {
   };
  
   //先ほどビューファイルに追加したもともとある子要素用のセレクトボックスのHTML
-  let defaultPlaceSelect = `<select class="default-place-select bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" name="event[place]" id="event_place">
+  let defaultPlaceSelect = `<select class="default-place-select bg-gray-50 text-gray-800 border focus:ring 
+                              ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" 
+                              name="event[place]" id="event_place">
  <option value>開催場所を選択してください</option>
  </select>`;
  
