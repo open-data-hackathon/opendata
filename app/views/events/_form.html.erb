@@ -1,5 +1,6 @@
 <%= form_with(model: event, class: "contents") do |form| %>
   <%= render 'shared/error_messages', object: form.object %>
+
   <div class="my-5">
     <%= form.label :title, "タイトル(必須)", calss: "text-gray-800" %>
     <%= form.text_field :title, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" %>
@@ -20,13 +21,25 @@
   <div calss="text-gray-800">開催場所</div>
 
   <div class="my-5 inline-block">
-    <%= form.label :district_id, "地区", calss: "text-gray-400 text-xs" %><br>
-    <%= form.collection_select :district_id, District.all, :id, :name, { include_blank: "地区を選んでください" }, { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" }  %>
+    <%= form.label :district, "地区", calss: "text-gray-400 text-xs" %><br>
+    <%= form.collection_select :district, District.all, :id, :name, { include_blank: "地区を選んでください" }, 
+        { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 
+                  rounded outline-none transition duration-100 px-3 py-2 mt-2" }  %>
   </div>
 
   <div class="my-5 inline-block ml-4">
-    <%= form.label :place_id, calss: "text-gray-400 text-xs" %><br>
-    <%= form.collection_select :place_id, Place.all, :id, :place_name, { include_blank: "開催場所を選択してください" } , { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" } %>
+    <%= form.label :place, calss: "text-gray-400 text-xs" %><br id='br'>
+    <%= form.select :place, [], { include_blank: "開催場所を選択してください" } , 
+        { class: "default-place-select bg-gray-50 text-gray-800 border focus:ring 
+                  ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2" } %>
+    <% District.all.each do |district| %>
+      <template id="<%= "place-of-district#{ district.id }" %>">
+        <%= form.collection_select :place, district.places, :id, :place_name, 
+        { include_blank: "開催場所を選択してください"}, 
+        { class: "bg-gray-50 text-gray-800 border focus:ring ring-indigo-300
+                   rounded outline-none transition duration-100 px-3 py-2 mt-2" } %>
+      </template>
+    <% end %>
   </div>
 
   <div class="mb-5">
@@ -44,9 +57,7 @@
     <%= form.file_field :events_image, class: "w-full bg-gray-50 text-gray-800 border focus:ring ring-indigo-300 rounded outline-none transition duration-100 px-3 py-2 mt-2 mb-5" %>
   </div>
 
-
   <div class="inline">
     <%= form.submit class: "inline-block bg-indigo-500 hover:bg-indigo-600 active:bg-indigo-700 focus-visible:ring ring-indigo-300 text-white text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-100 px-8 py-3 cursor-pointer" %>
   </div>
-
 <% end %>
